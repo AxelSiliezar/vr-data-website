@@ -57,7 +57,7 @@ const moreLinks = [
     url: "https://gatsbyjs.com/starters/",
   },
   {
-    text: "Showcase",
+    text: "My commit: Tyler Ly",
     url: "https://gatsbyjs.com/showcase/",
   },
   {

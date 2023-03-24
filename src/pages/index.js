@@ -8,7 +8,7 @@ import * as styles from "../components/index.module.css"
 
 const links = [
   {
-    text: "Change in Text for testing purposes",
+    text: "CHANGE FOR TEST",
     url: "https://www.gatsbyjs.com/docs/tutorial",
     description:
       "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",

@@ -71,50 +71,29 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 const IndexPage = () => (
   <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
+   <head>
+      <script src="{{ url_for('static',filename='code.js') }}"></script>
+      <link rel="stylesheet" href="{{ url_for('static',filename='styles/sheet.css') }}">
+      <link rel="icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+    </head>
+    <body>
+    <div class="image-container">
+      <img src="../static/images/vchlogo.png" alt="Image description">
     </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+    <div class="login-card">
+    <h2>VR Examination Portal</h2>
+    <div>
+      <input id="username" placeholder=" " type="text" required>
+      <label for="username">Username</label>
+    </div>
+    <div>
+      <input id="password" placeholder=" " type="password" required>
+      <label for="password">Password</label>
+    </div>
+    <button onclick = "readLogin()">Log In</button>
+    <label id="message"></label>
+  </div>
+</body>
   </Layout>
 )
 
